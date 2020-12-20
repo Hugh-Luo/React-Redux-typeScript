@@ -1,12 +1,17 @@
 import React from 'react';
-import Intro from "./introduction";
-
+// import Intro from "./introduction";
+import store from "../redux/store";
+import {Provider} from 'react-redux'
+import CakeContainer from "./CakeContainer";
 
 const App:React.FC = () => {
     return (
-        <div>
-            <Intro name='hugh' age={13}/>
-        </div>
+        <Provider store={store}>
+            <div className='App'>
+                <CakeContainer/>
+            </div>
+        </Provider>
+
     )
 }
 
