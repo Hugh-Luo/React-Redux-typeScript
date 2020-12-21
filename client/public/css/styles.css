@@ -1,5 +1,8 @@
 
-html {
-    background-color: whitesmoke;
-    text-align: center;
+#Login {
+    margin: 20% 20% 0
+}
+
+#Login button {
+    margin: 20px 10% 0 90%;
 }
