@@ -3,32 +3,34 @@ import axios from 'axios'
 
 const Register : React.FC = () => {
 
-    const [email, setEmail] = useState('')
+    const [userRegister, setUserRegister] = useState({
+        email:'',
+        password: ''
+    })
 
-    const [password, setPassword] = useState('')
 
+    const HandleInfoChange = (e:any) => {
+        console.log(e.target.name)
+        const {name, value} = e.target;
 
-    const HandleEmailChange = (e:any) => {
-        // console.log(e.target.value)
-        const updateEmail = e.target.value;
-        setEmail(updateEmail)
+        setUserRegister(prevState => {
+            return {
+                ...prevState,
+                [name] : value
+            }
+        })
     }
 
-    const HandlePasswordChange = (e:any) => {
-        // console.log(e.target.value)
-        const updatePassword = e.target.value;
-        setPassword(updatePassword)
-    }
 
     const HandleSubmit = (e:any) => {
 
         e.preventDefault()
-        setEmail(email)
-        setPassword(password)
+
+        setUserRegister(userRegister)
 
         const register_info = {
-            email : email,
-            password : password
+            email : userRegister.email,
+            password : userRegister.password
         }
 
         // console.log(register_info)
@@ -38,8 +40,6 @@ const Register : React.FC = () => {
             .then(res=>console.log(res.data))
             .catch(err=>console.log(err))
 
-        setEmail('')
-        setPassword('')
     }
 
 
@@ -48,11 +48,11 @@ const Register : React.FC = () => {
         <div id='Register'>
             <form onSubmit={HandleSubmit}>
                 <div className="form-floating mb-3">
-                    <input type="email" className="form-control" onChange={HandleEmailChange} value={email} id="floatingInput" placeholder="name@example.com"/>
+                    <input type="email" name="email" className="form-control" onChange={HandleInfoChange} value={userRegister.email} id="floatingInput" placeholder="name@example.com"/>
                     <label htmlFor="floatingInput">Email address</label>
                 </div>
                 <div className="form-floating">
-                    <input type="password" className="form-control" onChange={HandlePasswordChange} value={password} id="floatingPassword" placeholder="Password"/>
+                    <input type="password" name="password" className="form-control" onChange={HandleInfoChange} value={userRegister.password} id="floatingPassword" placeholder="Password"/>
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
 
