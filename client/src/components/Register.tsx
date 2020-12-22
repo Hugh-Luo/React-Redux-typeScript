@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import axios from 'axios'
 
 const Register : React.FC = () => {
 
@@ -9,13 +9,13 @@ const Register : React.FC = () => {
 
 
     const HandleEmailChange = (e:any) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         const updateEmail = e.target.value;
         setEmail(updateEmail)
     }
 
     const HandlePasswordChange = (e:any) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         const updatePassword = e.target.value;
         setPassword(updatePassword)
     }
@@ -26,10 +26,20 @@ const Register : React.FC = () => {
         setEmail(email)
         setPassword(password)
 
-        const finalEmail = email
-        const finalPassword = password
+        const register_info = {
+            email : email,
+            password : password
+        }
 
-        console.log({finalEmail, finalPassword})
+        // console.log(register_info)
+
+        const url = 'http://localhost:5000/user/register'
+        axios.post(url, register_info)
+            .then(res=>console.log(res.data))
+            .catch(err=>console.log(err))
+
+        setEmail('')
+        setPassword('')
     }
 
 
