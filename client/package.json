@@ -19,7 +19,9 @@
     "react-redux": "^7.2.2",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "typescript": "^4.1.3",
     "web-vitals": "^0.2.4"
@@ -29,9 +31,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "fontend": "yarn start",
+    "fontend": "npm start",
     "backend": "cd ../backend && node server.js",
-    "start_full_app": "concurrently \"yarn run fontend\" \"yarn run backend\""
+    "start_full_app": "concurrently \"npm run fontend\" \"npm run backend\""
   },
   "eslintConfig": {
     "extends": [

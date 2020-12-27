@@ -1,9 +1,8 @@
-import { stat } from "fs";
 import {
-  SET_EMPLOYEE_PHONE,
-  SET_EMPLOYEE_EMAIL,
-  SET_EMPLOYEE_AGE,
-  SET_EMPLOYEE_NAME,
+  EMPLOYEE_PHONE_SET,
+  EMPLOYEE_EMAIL_SET,
+  EMPLOYEE_AGE_SET,
+  EMPLOYEE_NAME_SET,
 } from "../actions/employee";
 import { Reducer, AnyAction } from "redux";
 
@@ -14,7 +13,7 @@ export interface employeeState {
   phone: string;
 }
 
-export const initial_employeeSatate: employeeState = {
+export const initialEmployeeState: employeeState = {
   name: "",
   age: 0,
   email: "",
@@ -22,20 +21,20 @@ export const initial_employeeSatate: employeeState = {
 };
 
 export const employeeReducer: Reducer<employeeState> = (
-  state = initial_employeeSatate,
+  state = initialEmployeeState,
   action
 ) => {
   switch (action.type) {
-    case SET_EMPLOYEE_NAME:
+    case EMPLOYEE_NAME_SET:
       return { ...state, name: action.payload };
 
-    case SET_EMPLOYEE_AGE:
+    case EMPLOYEE_AGE_SET:
       return { ...state, age: action.payload };
 
-    case SET_EMPLOYEE_EMAIL:
+    case EMPLOYEE_EMAIL_SET:
       return { ...state, email: action.payload };
 
-    case SET_EMPLOYEE_PHONE:
+    case EMPLOYEE_PHONE_SET:
       return { ...state, phone: action.payload };
 
     default:

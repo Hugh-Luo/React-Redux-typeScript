@@ -1,16 +1,18 @@
 import React from "react";
-import Login from "./Register";
-// import store from "../redux/store";
-// import {Provider} from 'react-redux'
+import FetchDataContainer from "./FetchDataContainer";
+// import Login from "./Register";
+import store from "../redux/store";
+import {Provider} from 'react-redux'
+// import {FetchContainer} from './FetchDataContainer'
 // import CakeContainer from "./CakeContainer";
 
 const App: React.FC = () => {
   return (
-    // <Provider store={store}>
+    <Provider store={store}>
     <div className="App">
-      <Login />
+      <FetchDataContainer/>
     </div>
-    // </Provider>
+    </Provider>
   );
 };
 

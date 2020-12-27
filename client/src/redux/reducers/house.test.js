@@ -1,5 +1,5 @@
 import App from "../../components/App";
-import { houseReducer } from "../reducers/house";
+import { houseReducer } from "./house";
 import { set_house } from "../actions/house";
 import {
   getHouse_location,

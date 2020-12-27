@@ -2,7 +2,7 @@ import { SET_EMAIL, SET_PASSWORD } from "../actions/user";
 import { Reducer } from "redux";
 import { AnyAction } from "redux";
 
-export interface userState {
+export interface UserState {
   email: string;
   password: string;
 }
@@ -12,7 +12,7 @@ export const user_initialState = {
   password: "YouCanDoIt",
 };
 
-export const UserReducer: Reducer<userState, AnyAction> = (
+export const UserReducer: Reducer<UserState, AnyAction> = (
   state = user_initialState,
   action
 ) => {

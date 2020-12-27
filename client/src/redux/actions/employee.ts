@@ -1,32 +1,32 @@
-export const SET_EMPLOYEE_NAME = "SET_EMPLOYEE_NAME";
-export const SET_EMPLOYEE_AGE = "SET_EMPLOYEE_AGE";
-export const SET_EMPLOYEE_EMAIL = "SET_EMPLOYEE_EMAIL";
-export const SET_EMPLOYEE_PHONE = "SET_EMPLOYEE_PHONE";
+export const EMPLOYEE_NAME_SET = "SET_EMPLOYEE_NAME";
+export const EMPLOYEE_AGE_SET = "SET_EMPLOYEE_AGE";
+export const EMPLOYEE_EMAIL_SET = "SET_EMPLOYEE_EMAIL";
+export const EMPLOYEE_PHONE_SET = "SET_EMPLOYEE_PHONE";
 
 export const Set_employee_name = (name: string) => {
   return {
-    type: SET_EMPLOYEE_NAME,
+    type: EMPLOYEE_NAME_SET,
     payload: name,
   };
 };
 
 export const Set_employee_age = (age: number) => {
   return {
-    type: SET_EMPLOYEE_AGE,
+    type: EMPLOYEE_AGE_SET,
     payload: age,
   };
 };
 
 export const Set_employee_email = (email: string) => {
   return {
-    type: SET_EMPLOYEE_EMAIL,
+    type: EMPLOYEE_EMAIL_SET,
     payload: email,
   };
 };
 
 export const Set_employee_phone = (phone: string) => {
   return {
-    type: SET_EMPLOYEE_PHONE,
+    type: EMPLOYEE_PHONE_SET,
     payload: phone,
   };
 };

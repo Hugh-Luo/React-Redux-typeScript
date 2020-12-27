@@ -1,5 +1,5 @@
 import { Set_Email, Set_Password } from "../actions/user";
-import { UserReducer, user_initialState } from "../reducers/user";
+import { UserReducer, user_initialState } from "./user";
 import { getUserEmail, getUserPassword } from "../selectors/user";
 
 describe("User Reducer", () => {
